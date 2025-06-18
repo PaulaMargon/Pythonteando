@@ -1,0 +1,51 @@
+# Archivos de sistema de Windows
+Thumbs.db
+Desktop.ini
+*.lnk
+ehthumbs.db
+$RECYCLE.BIN/
+
+# Archivos de sistema de macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+.VolumeIcon.icns
+.DS_Store?
+.fseventsd
+
+# Entornos virtuales de Python
+venv/
+ENV/
+env/
+.venv/
+.ENV/
+.env/
+
+# Archivos de caché de Python
+__pycache__/
+*.py[cod]
+
+# Archivos de configuración y logs de Python
+*.log
+*.pot
+*.pyc
+
+# Configuración de IDEs
+.idea/
+.vscode/
+.vs/
+
+# Archivos generados por Visual Studio
+bin/
+obj/
+*.user
+*.suo
+*.userprefs
+*.pdb
+*.exe
+*.dll
+*.cache
