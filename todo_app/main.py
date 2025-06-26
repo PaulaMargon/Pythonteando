@@ -11,7 +11,7 @@ def write_todos(filepath, todos_arg):
 
 while True:
     # Get user input and strip space chars from it
-    user_action = input("Type add, show, edit or exit:")
+    user_action = input("Type add, show, edit, complete or exit:")
     user_action = user_action.strip()
 
     # if "add" in user_action in user_action:
@@ -22,7 +22,7 @@ while True:
         write_todos('todos.txt', todos)
 
     elif user_action.startswith('show'):
-        todos = get_todos()
+        todos = get_todos('todos.txt')
         for index, item in enumerate(todos):
             item = item.strip('\n')
             row = f"{index + 1}-{item}"
@@ -38,8 +38,7 @@ while True:
             new_todo = input("Enter a new todo:")
             todos[number] = new_todo + '\n'
 
-            with open("todos.txt", "w") as file:
-                file.writelines(todos)
+            write_todos('todos.txt', todos)
         except ValueError:
             print("Your command is not valid")
             continue
@@ -49,10 +48,10 @@ while True:
             number = int(user_action[9:])
             todos = get_todos('todos.txt')
             index = number - 1
-            todo_to_remove = todos[index]
+            todo_to_remove = todos[index].strip('\n')
             todos.pop(index)
-            with open("todos.txt", "w") as file:
-                file.writelines(todos)
+
+            write_todos(f'todos.txt', todos)
             message = f"Todo {todo_to_remove} has been completed."
             print(message)
         except IndexError:
