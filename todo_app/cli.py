@@ -1,4 +1,5 @@
 from modules import functions
+import time
 
 while True:
     # Get user input and strip space chars from it
